@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Course_Management_System_Final
 {
-  public partial class Form1 : Form
-  {
-    public Form1()
+    public partial class Form1 : Form
     {
-      InitializeComponent();
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
-  }
 }
