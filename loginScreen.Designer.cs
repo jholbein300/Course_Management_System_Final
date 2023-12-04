@@ -1,7 +1,11 @@
-﻿namespace Course_Management_System_Final
+﻿using System.Windows.Forms;
+
+namespace Course_Management_System_Final
 {
     partial class loginScreen
     {
+        //private Button loginBtn;
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
