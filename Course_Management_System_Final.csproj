@@ -65,53 +65,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
-    <Compile Include="dbConnect.cs" />
-    <Compile Include="addCourseView.cs">
+    <Compile Include="Entity\Account.cs" />
+    <Compile Include="Control\DBConnector.cs" />
+    <Compile Include="Boundary\addCourseView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addCourseView.Designer.cs">
+    <Compile Include="Boundary\addCourseView.Designer.cs">
       <DependentUpon>addCourseView.cs</DependentUpon>
     </Compile>
-    <Compile Include="instructorViewHome.cs">
+    <Compile Include="Boundary\instructorViewHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="instructorViewHome.Designer.cs">
+    <Compile Include="Boundary\instructorViewHome.Designer.cs">
       <DependentUpon>instructorViewHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="loginScreen.cs">
+    <Compile Include="Boundary\loginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="loginScreen.Designer.cs">
+    <Compile Include="Boundary\loginScreen.Designer.cs">
       <DependentUpon>loginScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="logoutScreen.cs">
+    <Compile Include="Boundary\logoutScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="logoutScreen.Designer.cs">
+    <Compile Include="Boundary\logoutScreen.Designer.cs">
       <DependentUpon>logoutScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="removeStudentView.cs">
+    <Compile Include="Boundary\removeStudentView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="removeStudentView.Designer.cs">
+    <Compile Include="Boundary\removeStudentView.Designer.cs">
       <DependentUpon>removeStudentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="studentViewHome.cs">
+    <Compile Include="Boundary\studentViewHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="studentViewHome.Designer.cs">
+    <Compile Include="Boundary\studentViewHome.Designer.cs">
       <DependentUpon>studentViewHome.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="instructorViewHome.resx">
+    <EmbeddedResource Include="Boundary\instructorViewHome.resx">
       <DependentUpon>instructorViewHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="loginScreen.resx">
+    <EmbeddedResource Include="Boundary\loginScreen.resx">
       <DependentUpon>loginScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="logoutScreen.resx">
+    <EmbeddedResource Include="Boundary\logoutScreen.resx">
       <DependentUpon>logoutScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -123,10 +123,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="removeStudentView.resx">
+    <EmbeddedResource Include="Boundary\removeStudentView.resx">
       <DependentUpon>removeStudentView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="studentViewHome.resx">
+    <EmbeddedResource Include="Boundary\studentViewHome.resx">
       <DependentUpon>studentViewHome.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
