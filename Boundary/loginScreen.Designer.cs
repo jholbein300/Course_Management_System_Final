@@ -6,6 +6,8 @@ namespace Course_Management_System_Final
     partial class loginScreen
     {
         
+        
+        
         //private Button loginBtn;
 
         /// <summary>
@@ -74,7 +76,7 @@ namespace Course_Management_System_Final
             this.loginLabel.TabIndex = 2;
             this.loginLabel.Text = "Login";
             this.loginLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.loginLabel.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // loginBtn
             // 

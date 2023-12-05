@@ -5,7 +5,7 @@ using System.IO;
 using System.Security.Principal;
 using Course_Management_System_Final.Entity;
 
-namespace Course_Management_System_Final
+namespace Course_Management_System_Final.Control
 {
     public static class DBConnector
     {
@@ -271,6 +271,7 @@ namespace Course_Management_System_Final
                         }
                     }
                 }
+
                 stm = @"INSERT INTO LOG VALUES(0, $time, 'login', $date, $id);";
                 using (SQLiteCommand cmnd = new SQLiteCommand())
                 {

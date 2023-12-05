@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Course_Management_System_Final.Control;
 
 namespace Course_Management_System_Final
 {
@@ -10,8 +11,9 @@ namespace Course_Management_System_Final
     {
         /// <summary>
         /// The main entry point for the application.
+        /// 
+        /// Trying
         /// </summary>
-        /// //Hello, is there anybody in there? Just nod if you can hear me?
         [STAThread]
         static void Main()
         {
