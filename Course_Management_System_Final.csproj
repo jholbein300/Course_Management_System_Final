@@ -68,6 +68,9 @@
     <Compile Include="Boundary\validateUser.cs">
       <DependentUpon>loginScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\ClassControl.cs" />
+    <Compile Include="Control\LoginControl.cs" />
+    <Compile Include="Control\RemoveControl.cs" />
     <Compile Include="Entity\Account.cs" />
     <Compile Include="Entity\Course.cs" />
     <Compile Include="Entity\Enrollment.cs" />
