@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Course_Management_System_Final
+namespace Course_Management_System_Final.Entity
 {
     public class Account
     {

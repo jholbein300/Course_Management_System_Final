@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
 using System.Security.Principal;
+using Course_Management_System_Final.Entity;
 
 namespace Course_Management_System_Final
 {
@@ -87,12 +88,12 @@ namespace Course_Management_System_Final
             }
         }
 
-        public static Account GetUser(string usr, string pwd)
+        public static Account GetUser(string usn, string pwd)
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
             {
                 conn.Open();
-                int x = usr.GetHashCode();
+                int x = usn.GetHashCode();
                 int y = pwd.GetHashCode();
                 string stm = @"SELECT[accountID]
                         ,[username]
@@ -110,7 +111,7 @@ namespace Course_Management_System_Final
                     {
                         while (rdr.Read())
                         {
-                            Account acct = new Account(rdr.GetInt32(0), usr, pwd, rdr.GetString(3), rdr.GetString(4));
+                            Account acct = new Account(rdr.GetInt32(0), usn, pwd, rdr.GetString(3), rdr.GetString(4));
                             return acct;
                         }
                         Account act = new Account(0, null, null, null, null);
@@ -120,8 +121,44 @@ namespace Course_Management_System_Final
             }
         }
 
+        public static List<Account> getList(string usn)
+        {
+            List<Account> acctList = new List<Account>();
+           
+            using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
+            {
+                conn.Open();
 
-        public static void SaveLog(string usr)
+                int hash = usn.GetHashCode();
+                string stm = @"SELECT[accountID]
+                            ,[username]
+                            ,[password]
+                            ,[role]
+                            ,[name]
+                            FROM[ACCOUNT]
+                            WHERE[username] == ($name)";
+                using (SQLiteCommand com = new SQLiteCommand(stm, conn))
+                {
+                    com.Parameters.AddWithValue("$name", hash);
+                    using (SQLiteDataReader rdr = com.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            Account acct = new Account(rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2), rdr.GetString(3), rdr.GetString(4));
+                            acctList.Add(acct);
+                        }
+                    }
+                }
+            }
+            return acctList;
+        }
+
+        public static List<Course> getClass(string usn)
+        {
+
+        }
+
+        public static void SaveLog(string usn)
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
             {
@@ -132,8 +169,8 @@ namespace Course_Management_System_Final
                 string t = time.ToString("s");
                 string d = date.ToString("s");
                 int id = 0;
-                int hash = usr.GetHashCode();
-                string stm = "SELECT [ID] FROM ACCOUNT WHERE username = ($name);";
+                int hash = usn.GetHashCode();
+                string stm = "SELECT [accountID] FROM ACCOUNT WHERE username = ($name);";
                 using (SQLiteCommand cmnd = new SQLiteCommand(stm, conn))
                 {
                     cmnd.Parameters.AddWithValue("$name", hash);

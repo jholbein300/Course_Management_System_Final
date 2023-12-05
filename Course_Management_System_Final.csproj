@@ -66,6 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Account.cs" />
+    <Compile Include="Entity\Course.cs" />
+    <Compile Include="Entity\Enrollment.cs" />
+    <Compile Include="Entity\List.cs" />
     <Compile Include="Control\DBConnector.cs" />
     <Compile Include="Boundary\addCourseView.cs">
       <SubType>Form</SubType>
