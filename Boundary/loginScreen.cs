@@ -18,13 +18,16 @@ namespace Course_Management_System_Final
             // Attach the event handler to the login button click event
             loginBtn.Click += LoginBtn_Click;
         }
+        
 
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+            
             if (usernameBox.Text.Length > 0)
             {
                 string username = usernameBox.Text;
+                
 
                 string password = passwordBox.Text;
 
@@ -48,10 +51,11 @@ namespace Course_Management_System_Final
                     // Hide the current form
                     this.Hide();
                 }
-                else
-                {
-                    MessageBox.Show("Invalid username or password. Please try again.");
-                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password. Please try again.");
             }
         }
     }

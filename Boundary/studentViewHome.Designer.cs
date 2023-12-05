@@ -45,7 +45,7 @@ namespace Course_Management_System_Final
             this.studentName.Size = new System.Drawing.Size(100, 23);
             this.studentName.TabIndex = 0;
             this.studentName.Text = "studentName";
-            this.studentName.Click += new System.EventHandler(this.label1_Click);
+            this.studentName.Click += new System.EventHandler(this.addClassButton_Click);
             // 
             // logoutButton
             // 
@@ -78,7 +78,7 @@ namespace Course_Management_System_Final
             // 
             this.addClassButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.addClassButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.addClassButton.Location = new System.Drawing.Point(344, 344);
+            this.addClassButton.Location = new System.Drawing.Point(353, 342);
             this.addClassButton.Name = "addClassButton";
             this.addClassButton.Size = new System.Drawing.Size(75, 23);
             this.addClassButton.TabIndex = 4;
