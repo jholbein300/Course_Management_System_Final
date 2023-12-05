@@ -70,7 +70,7 @@ namespace Course_Management_System_Final
                     INSERT INTO ENROLLMENT (courseID, studentID) VALUES (3, 2);
                     COMMIT;";
                     cmnd.CommandText = strSql;
-                    string usrname1 = "student@august.edu";
+                    string usrname1 = "student@augusta.edu";
                     string pwd1 = "student123!";
                     string usrname2 = "instructor@augusta.edu";
                     string pwd2 = "instructor123!";
@@ -153,12 +153,14 @@ namespace Course_Management_System_Final
             return acctList;
         }
 
-        public static List<Course> getClass(string usn)
-        {
+        //public static List<Course> getClass(string usn)
+        //{
+            
 
-        }
+        //}
 
-        public static void SaveLog(string usn)
+        public static void SaveLogin(string usn)
+        
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
             {
