@@ -10,8 +10,9 @@ namespace Course_Management_System_Final
     {
         /// <summary>
         /// The main entry point for the application.
+        /// 
+        /// Trying
         /// </summary>
-        /// //Hello, is there anybody in there? Just nod if you can hear me?
         [STAThread]
         static void Main()
         {

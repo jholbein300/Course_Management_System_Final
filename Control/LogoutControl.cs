@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Course_Management_System_Final
 {
-    public class LoginControl
+    public class LogoutControl
     {
-        
+
     }
 }
