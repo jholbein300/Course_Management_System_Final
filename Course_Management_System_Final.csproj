@@ -73,6 +73,9 @@
     <Compile Include="addCourseView.Designer.cs">
       <DependentUpon>addCourseView.cs</DependentUpon>
     </Compile>
+    <Compile Include="instructorViewHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="instructorViewHome.Designer.cs">
       <DependentUpon>instructorViewHome.cs</DependentUpon>
     </Compile>
