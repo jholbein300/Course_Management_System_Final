@@ -67,16 +67,49 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="dbConnect.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="addCourseView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="addCourseView.Designer.cs">
+      <DependentUpon>addCourseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="instructorViewHome.Designer.cs">
+      <DependentUpon>instructorViewHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginScreen.Designer.cs">
+      <DependentUpon>loginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="logoutScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="logoutScreen.Designer.cs">
+      <DependentUpon>logoutScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="removeStudentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="removeStudentView.Designer.cs">
+      <DependentUpon>removeStudentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="studentViewHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="studentViewHome.Designer.cs">
+      <DependentUpon>studentViewHome.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="instructorViewHome.resx">
+      <DependentUpon>instructorViewHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginScreen.resx">
+      <DependentUpon>loginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logoutScreen.resx">
+      <DependentUpon>logoutScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +120,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="removeStudentView.resx">
+      <DependentUpon>removeStudentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentViewHome.resx">
+      <DependentUpon>studentViewHome.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
