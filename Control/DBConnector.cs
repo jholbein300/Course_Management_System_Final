@@ -5,11 +5,11 @@ using System.IO;
 using System.Security.Principal;
 using Course_Management_System_Final.Entity;
 
-namespace Course_Management_System_Final
+namespace Course_Management_System_Final.control
 {
-    public static class DBConnector
+    public  class DBConnector
     {
-        public static void InitializeDB()
+        public void InitializeDB()
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
             {
@@ -88,7 +88,7 @@ namespace Course_Management_System_Final
             }
         }
 
-        public static Account GetUser(string usn, string pwd)
+        public Account GetUser(string usn, string pwd)
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
             {
