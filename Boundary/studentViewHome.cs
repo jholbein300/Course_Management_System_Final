@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using Course_Management_System_Final.Control;
 
 
 namespace Course_Management_System_Final
@@ -24,12 +25,12 @@ namespace Course_Management_System_Final
         public void logoutButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //DBConnector.SaveLogin(loggedInUsn); when it is added to LoginController, it
-            //will save the time of the logout event in the DB
+            //DBConnector.SaveLogin(loggedInUsn);
             MessageBox.Show("You have successfully logged out!", "Logout Successful", MessageBoxButtons.OK);
             loginScreen loginScreen = new loginScreen();
             loginScreen.Show();
             
         }
+        
     }
 }

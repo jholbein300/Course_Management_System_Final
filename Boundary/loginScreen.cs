@@ -1,8 +1,9 @@
 ﻿// loginScreen.cs
 
 using System;
-using System.Data.SQLite;
+using System.Linq;
 using System.Windows.Forms;
+using Course_Management_System_Final.Control;
 
 namespace Course_Management_System_Final
 {
@@ -28,11 +29,18 @@ namespace Course_Management_System_Final
             if (usernameBox.Text.Length > 0)
             {
                 string username = usernameBox.Text;
+
+                int usnHash = username.GetHashCode();
+
                 
 
                 string password = passwordBox.Text;
 
-                string role = authenticationHelper.ValidateUser(username, password);
+                int pwdHash = password.GetHashCode();
+
+                string role = authenticationHelper.ValidateUser(usnHash.ToString(), pwdHash.ToString());
+                
+
 
                 if (role != null)
                 {
@@ -42,7 +50,6 @@ namespace Course_Management_System_Final
                     {
                         studentViewHome studentViewHome = new studentViewHome();
                         studentViewHome.Show();
-                        Wow();
                     }
                     else if (role == "instructor")
                     {
@@ -60,13 +67,5 @@ namespace Course_Management_System_Final
                 MessageBox.Show("Invalid username or password. Please try again.");
             }
         }
-
-       // private void Wow()
-        //{
-        //    using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
-         //   {
-                string comdstr = ""
-           // }
-       // }
     }
 }
