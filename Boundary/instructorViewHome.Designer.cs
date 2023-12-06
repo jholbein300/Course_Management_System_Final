@@ -35,7 +35,7 @@ namespace Course_Management_System_Final
             this.assignedClasses = new System.Windows.Forms.ComboBox();
             this.selectClassLabel = new System.Windows.Forms.Label();
             this.decorativeBox = new System.Windows.Forms.Panel();
-            this.nextButtonInstructor = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
             this.professorName = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Button();
             this.decorativeBox.SuspendLayout();
@@ -66,7 +66,7 @@ namespace Course_Management_System_Final
             // 
             this.decorativeBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.decorativeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.decorativeBox.Controls.Add(this.nextButtonInstructor);
+            this.decorativeBox.Controls.Add(this.nextButton);
             this.decorativeBox.Controls.Add(this.selectClassLabel);
             this.decorativeBox.Controls.Add(this.assignedClasses);
             this.decorativeBox.Location = new System.Drawing.Point(200, 135);
@@ -74,17 +74,17 @@ namespace Course_Management_System_Final
             this.decorativeBox.Size = new System.Drawing.Size(600, 380);
             this.decorativeBox.TabIndex = 2;
             // 
-            // nextButtonInstructor
+            // nextButton
             // 
-            this.nextButtonInstructor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.nextButtonInstructor.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.nextButtonInstructor.Font = new System.Drawing.Font("Trebuchet MS", 20F);
-            this.nextButtonInstructor.Location = new System.Drawing.Point(225, 250);
-            this.nextButtonInstructor.Name = "nextButtonInstructor";
-            this.nextButtonInstructor.Size = new System.Drawing.Size(150, 50);
-            this.nextButtonInstructor.TabIndex = 0;
-            this.nextButtonInstructor.Text = "Next";
-            this.nextButtonInstructor.UseVisualStyleBackColor = true;
+            this.nextButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.nextButton.Font = new System.Drawing.Font("Trebuchet MS", 20F);
+            this.nextButton.Location = new System.Drawing.Point(225, 250);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(150, 50);
+            this.nextButton.TabIndex = 0;
+            this.nextButton.Text = "Next";
+            this.nextButton.UseVisualStyleBackColor = true;
             // 
             // professorName
             // 
@@ -92,9 +92,8 @@ namespace Course_Management_System_Final
             this.professorName.Font = new System.Drawing.Font("Trebuchet MS", 16F);
             this.professorName.Location = new System.Drawing.Point(12, 9);
             this.professorName.Name = "professorName";
-            this.professorName.Size = new System.Drawing.Size(160, 27);
+            this.professorName.Size = new System.Drawing.Size(0, 27);
             this.professorName.TabIndex = 3;
-            this.professorName.Text = DBConnector.SessionManager.Instance.LoggedInUsername;
             // 
             // logoutButton
             // 
@@ -132,7 +131,7 @@ namespace Course_Management_System_Final
         private System.Windows.Forms.ComboBox assignedClasses;
         private System.Windows.Forms.Label selectClassLabel;
         private System.Windows.Forms.Panel decorativeBox;
-        private System.Windows.Forms.Button nextButtonInstructor;
+        private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Label professorName;
         private System.Windows.Forms.Button logoutButton;
     }

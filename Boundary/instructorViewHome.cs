@@ -9,7 +9,7 @@ namespace Course_Management_System_Final
         {
             InitializeComponent();
             logoutButton.Click += logoutButton_Click;
-
+            nextButton.Click += nextButton_Click;
         }
 
 
@@ -22,6 +22,13 @@ namespace Course_Management_System_Final
             loginScreen loginScreen = new loginScreen();
             loginScreen.Show();
             
+        }
+
+        public void nextButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            removeStudentView removeStudentView = new removeStudentView();
+            removeStudentView.Show();
         }
     }
 }
