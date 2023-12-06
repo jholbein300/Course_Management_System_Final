@@ -99,7 +99,7 @@ namespace Course_Management_System_Final
             // 
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.logoutButton.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.logoutButton.Location = new System.Drawing.Point(713, 9);
+            this.logoutButton.Location = new System.Drawing.Point(897, 12);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(75, 23);
             this.logoutButton.TabIndex = 1;

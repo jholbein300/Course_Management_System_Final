@@ -7,9 +7,9 @@ using Course_Management_System_Final.Entity;
 
 namespace Course_Management_System_Final.Control
 {
-    public static class DBConnector
+    public class DBConnector
     {
-        public static void InitializeDB()
+        public void InitializeDB()
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
             {
@@ -88,7 +88,7 @@ namespace Course_Management_System_Final.Control
             }
         }
 
-        public static Account GetUser(string usn, string pwd)
+        public Account GetUser(string usn, string pwd)
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
             {
@@ -153,7 +153,7 @@ namespace Course_Management_System_Final.Control
             return acctList;
         }
 
-        public static List<Course> getClass(string usn)
+        public List<Course> getClass(string usn)
         {
             List<Course> courList = new List<Course>();
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
@@ -224,7 +224,7 @@ namespace Course_Management_System_Final.Control
                             ,[courseID]
                             ,[studentID]
                             FROM[ENROLLMENT]
-                            WHERE [ID] IN (SELECT [accountID] FROM [ACCOUNT] WHERE [EROLLMENT].[ID] == [accountID])
+                            WHERE [ID] IN (SELECT [accountID] FROM [ACCOUNT] WHERE [ENROLLMENT].[ID] == [accountID])
                             AND (SELECT ID FROM COURSE where ENROLLMENT.ID == COURSE.ID)";
                 using (SQLiteCommand cmnd = new SQLiteCommand(stm, conn))
                 {
