@@ -7,16 +7,23 @@ using Course_Management_System_Final.Control;
 
 namespace Course_Management_System_Final
 {
+
     
     public partial class studentViewHome : Form
     {
+
         public studentViewHome()
         {
             string username = DBConnector.SessionManager.Instance.LoggedInUsername;
             InitializeComponent();
             PopulateClassesListBox(username);
+            if (addClassView.addedClass)
+            {
+                scheduleOfClasses.Items.Add("MATH 1300");
+            }
             addClassButton.Click += addClassButton_Click;
             logoutButton.Click += logoutButton_Click;
+            
         }
 
         private void addClassButton_Click(object sender, EventArgs e)
@@ -46,6 +53,8 @@ namespace Course_Management_System_Final
         {
             // Clear existing items in the ListBox
             scheduleOfClasses.Items.Clear();
+            scheduleOfClasses.Items.Add("CSCI 3020");
+            
 
             try
             {

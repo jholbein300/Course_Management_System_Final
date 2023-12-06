@@ -51,6 +51,7 @@ namespace Course_Management_System_Final
             this.assignedClasses.Size = new System.Drawing.Size(230, 43);
             this.assignedClasses.TabIndex = 0;
             this.assignedClasses.Text = "Assigned Classes";
+            this.assignedClasses.Items.Add("MATH 1300");
             // 
             // selectClassLabel
             // 
