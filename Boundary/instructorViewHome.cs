@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Course_Management_System_Final
 {
@@ -7,16 +8,20 @@ namespace Course_Management_System_Final
         public instructorViewHome()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, System.EventArgs e)
-        {
+            logoutButton.Click += logoutButton_Click;
 
         }
 
-        private void label1_Click_1(object sender, System.EventArgs e)
-        {
 
+        
+        public void logoutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            //DBConnector.SaveLogout(loggedInUsn);
+            MessageBox.Show("You have successfully logged out!", "Logout Successful", MessageBoxButtons.OK);
+            loginScreen loginScreen = new loginScreen();
+            loginScreen.Show();
+            
         }
     }
 }

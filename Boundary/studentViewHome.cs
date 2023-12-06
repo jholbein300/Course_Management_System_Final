@@ -25,7 +25,7 @@ namespace Course_Management_System_Final
         public void logoutButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //DBConnector.SaveLogin(loggedInUsn);
+            //DBConnector.SaveLogout(loggedInUsn);
             MessageBox.Show("You have successfully logged out!", "Logout Successful", MessageBoxButtons.OK);
             loginScreen loginScreen = new loginScreen();
             loginScreen.Show();

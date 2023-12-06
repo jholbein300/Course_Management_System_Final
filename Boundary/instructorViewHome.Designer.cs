@@ -59,8 +59,7 @@ namespace Course_Management_System_Final
             this.selectClassLabel.Size = new System.Drawing.Size(156, 21);
             this.selectClassLabel.TabIndex = 1;
             this.selectClassLabel.Text = "Select Class";
-            this.selectClassLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.selectClassLabel.Click += new System.EventHandler(this.label1_Click);
+            this.selectClassLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter; 
             // 
             // decorativeBox
             // 
@@ -93,7 +92,6 @@ namespace Course_Management_System_Final
             this.professorName.Size = new System.Drawing.Size(103, 19);
             this.professorName.TabIndex = 3;
             this.professorName.Text = "professorName";
-            this.professorName.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // logoutButton
             // 

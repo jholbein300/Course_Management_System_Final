@@ -18,14 +18,14 @@ namespace Course_Management_System_Final.Control
             {
                 int usnHash = username.GetHashCode();
                 int pwdHash = password.GetHashCode();
-                validateinput(usnHash, pwdHash);
+                Validateinput(usnHash, pwdHash);
                 return true;
             }
             else { return false; }
             
         }
 
-        public bool validateinput(int username, int password)
+        public bool Validateinput(int username, int password)
         {
             if (username != null && password != null)
             {
