@@ -18,8 +18,9 @@ namespace Course_Management_System_Final
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loginScreen());
             DBConnector.InitializeDB();
+            Application.Run(new loginScreen());
+            
         }
     }
 }

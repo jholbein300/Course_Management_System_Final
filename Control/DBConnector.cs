@@ -246,6 +246,43 @@ namespace Course_Management_System_Final.Control
             }
         }
 
+        public static void SaveLogin(string usn)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
+            {
+                conn.Open();
+                DateTime current = DateTime.Now;
+                TimeSpan time = current.TimeOfDay;
+                DateTime date = DateTime.Now.Date;
+                string t = time.ToString("s");
+                string d = date.ToString("s");
+                int id = 0;
+                int hash = usn.GetHashCode();
+                string stm = "SELECT [accountID] FROM ACCOUNT WHERE username = ($name);";
+                using (SQLiteCommand cmnd = new SQLiteCommand(stm, conn))
+                {
+                    cmnd.Parameters.AddWithValue("$name", hash);
+                    using (SQLiteDataReader rdr = cmnd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            id = rdr.GetInt32(0);
+                        }
+                    }
+                }
+                stm = @"INSERT INTO LOG VALUES(0, $time, 'login', $date, $id);";
+                using (SQLiteCommand cmnd = new SQLiteCommand())
+                {
+                    cmnd.Connection = conn;
+                    cmnd.CommandText = stm;
+                    cmnd.Parameters.AddWithValue("$time", t);
+                    cmnd.Parameters.AddWithValue("$date", d);
+                    cmnd.Parameters.AddWithValue("$id", id);
+                    cmnd.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void SaveLogOut(string username)
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
@@ -271,44 +308,6 @@ namespace Course_Management_System_Final.Control
                     }
                 }
                 stm = @"INSERT INTO LOG VALUES(0, $time, 'logout', $date, $id);";
-                using (SQLiteCommand cmnd = new SQLiteCommand())
-                {
-                    cmnd.Connection = conn;
-                    cmnd.CommandText = stm;
-                    cmnd.Parameters.AddWithValue("$time", t);
-                    cmnd.Parameters.AddWithValue("$date", d);
-                    cmnd.Parameters.AddWithValue("$id", id);
-                    cmnd.ExecuteNonQuery();
-                }
-            }
-        }
-
-        public static void SaveLogin(string usn)
-        
-        {
-            using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
-            {
-                conn.Open();
-                DateTime current = DateTime.Now;
-                TimeSpan time = current.TimeOfDay;
-                DateTime date = DateTime.Now.Date;
-                string t = time.ToString("s");
-                string d = date.ToString("s");
-                int id = 0;
-                int hash = usn.GetHashCode();
-                string stm = "SELECT [accountID] FROM ACCOUNT WHERE username = ($name);";
-                using (SQLiteCommand cmnd = new SQLiteCommand(stm, conn))
-                {
-                    cmnd.Parameters.AddWithValue("$name", hash);
-                    using (SQLiteDataReader rdr = cmnd.ExecuteReader())
-                    {
-                        while (rdr.Read())
-                        {
-                            id = rdr.GetInt32(0);
-                        }
-                    }
-                }
-                stm = @"INSERT INTO LOG VALUES(0, $time, 'login', $date, $id);";
                 using (SQLiteCommand cmnd = new SQLiteCommand())
                 {
                     cmnd.Connection = conn;
