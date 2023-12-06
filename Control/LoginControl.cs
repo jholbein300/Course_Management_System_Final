@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
@@ -12,6 +12,7 @@ namespace Course_Management_System_Final.Control
     public class LoginControl
     {
         DBConnector db = new DBConnector();
+        
         public bool Login(string username, string password)
         {
             if (username != null && password != null)
