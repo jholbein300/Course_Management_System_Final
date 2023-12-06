@@ -7,9 +7,9 @@ using Course_Management_System_Final.Entity;
 
 namespace Course_Management_System_Final.Control
 {
-    public  class DBConnector
+    public class DBConnector
     {
-        public void InitializeDB()
+        public static void InitializeDB()
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
             {
@@ -121,7 +121,7 @@ namespace Course_Management_System_Final.Control
             }
         }
 
-        public static List<Account> getList(string usn)
+        public List<Account> getList(string usn)
         {
             List<Account> acctList = new List<Account>();
            
@@ -152,14 +152,138 @@ namespace Course_Management_System_Final.Control
             }
             return acctList;
         }
+        public List<Course> getClass(string usn)
+        {
+            List<Course> courList = new List<Course>();
+            using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
+            {
+                conn.Open();
 
-        //public static List<Course> getClass(string usn)
-        //{
-            
+                int hash = usn.GetHashCode();
+                string stm = @"SELECT[ID]
+                            ,[name]
+                            ,[instructor]
+                            FROM[COURSE]
+                            WHERE [ID] IN 
+                            (SELECT [accountID] FROM [ACCOUNT] WHERE
+                            [COURSE].[ID] == [accountID])";
+                using (SQLiteCommand com = new SQLiteCommand(stm, conn))
+                {
+                    using (SQLiteDataReader rdr = com.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            Course cour = new Course(rdr.GetInt32(0), rdr.GetString(1), rdr.GetInt32(2));
+                            courList.Add(cour);
+                        }
+                    }
+                }
+            }
+            return courList;
+        }
 
-        //}
+        public List<Enrollment> getStudent(int courseId)
+        {
+            List<Enrollment> enList = new List<Enrollment>();
 
-        public static void SaveLogin(string usn)
+            using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
+            {
+                conn.Open();
+
+                string stm = @"SELECT[ID]
+                            ,[courseID]
+                            ,[studentID]
+                            FROM[ENROLLMENT]
+                            WHERE [ID] IN (SELECT [accountID] FROM [ACCOUNT] WHERE [EROLLMENT].[ID] == [accountID])
+                            AND (SELECT ID FROM COURSE where ENROLLMENT.ID == COURSE.ID)";
+                using (SQLiteCommand com = new SQLiteCommand(stm, conn))
+                {
+                    using (SQLiteDataReader rdr = com.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            Enrollment enrol = new Enrollment(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetInt32(2));
+                            enList.Add(enrol);
+                        }
+                    }
+                }
+            }
+            return enList;
+        }
+
+        public void Save(Enrollment student)
+        {
+            List<Enrollment> enList = new List<Enrollment>();
+
+            using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
+            {
+                conn.Open();
+
+                string stm = @"SELECT[ID]
+                            ,[courseID]
+                            ,[studentID]
+                            FROM[ENROLLMENT]
+                            WHERE [ID] IN (SELECT [accountID] FROM [ACCOUNT] WHERE [ENROLLMENT].[ID] == [accountID])
+                            AND (SELECT ID FROM COURSE where ENROLLMENT.ID == COURSE.ID)";
+                using (SQLiteCommand cmnd = new SQLiteCommand(stm, conn))
+                {
+                    using (SQLiteDataReader rdr = cmnd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            Enrollment enrol = new Enrollment(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetInt32(2));
+                            enList.Add(enrol);
+                        }
+                    }
+                }
+                stm = @"INSERT INTO LOG VALUES(0, 0, 0);";
+                using (SQLiteCommand cmnd = new SQLiteCommand())
+                {
+                    cmnd.Connection = conn;
+                    cmnd.CommandText = stm;
+                    cmnd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void SaveLogOut(string usn)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
+            {
+                conn.Open();
+                DateTime current = DateTime.Now;
+                TimeSpan time = current.TimeOfDay;
+                DateTime date = DateTime.Now.Date;
+                string t = time.ToString("s");
+                string d = date.ToString("s");
+                int id = 0;
+                int hash = usn.GetHashCode();
+                string stm = "SELECT [accountID] FROM ACCOUNT WHERE username = ($name);";
+                using (SQLiteCommand cmnd = new SQLiteCommand(stm, conn))
+                {
+                    cmnd.Parameters.AddWithValue("$name", hash);
+                    using (SQLiteDataReader rdr = cmnd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            id = rdr.GetInt32(0);
+                        }
+                    }
+                }
+                stm = @"INSERT INTO LOG VALUES(0, $time, 'logout', $date, $id);";
+                using (SQLiteCommand cmnd = new SQLiteCommand())
+                {
+                    cmnd.Connection = conn;
+                    cmnd.CommandText = stm;
+                    cmnd.Parameters.AddWithValue("$time", t);
+                    cmnd.Parameters.AddWithValue("$date", d);
+                    cmnd.Parameters.AddWithValue("$id", id);
+                    cmnd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void SaveLogin(string usn)
         
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
