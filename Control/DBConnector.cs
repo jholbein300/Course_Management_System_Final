@@ -372,6 +372,8 @@ namespace Course_Management_System_Final.Control
             {
                 _loggedInUsername = username;
             }
+            
+            
 
             // Add other session-related properties or methods as needed
         }
