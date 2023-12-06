@@ -61,6 +61,7 @@ namespace Course_Management_System_Final
             this.passwordBox.Location = new System.Drawing.Point(451, 377);
             this.passwordBox.Margin = new System.Windows.Forms.Padding(1);
             this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(96, 26);
             this.passwordBox.TabIndex = 1;
             this.passwordBox.Text = "Password";
@@ -76,7 +77,6 @@ namespace Course_Management_System_Final
             this.loginLabel.TabIndex = 2;
             this.loginLabel.Text = "Login";
             this.loginLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
             // 
             // loginBtn
             // 

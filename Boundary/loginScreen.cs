@@ -20,51 +20,50 @@ namespace Course_Management_System_Final
             // Attach the event handler to the login button click event
             loginBtn.Click += LoginBtn_Click;
         }
-        
+
 
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            
-            if (usernameBox.Text.Length > 0)
+
+            if (usernameBox.Text.Length > 0 && passwordBox.Text.Length > 0)
             {
                 string username = usernameBox.Text;
-
-                int usnHash = username.GetHashCode();
-
-                
-
                 string password = passwordBox.Text;
 
+                int usnHash = username.GetHashCode();
                 int pwdHash = password.GetHashCode();
 
+
                 string role = authenticationHelper.ValidateUser(usnHash.ToString(), pwdHash.ToString());
-                
 
 
-                if (role != null)
+                LoginControl loginControl = new LoginControl();
+                if (loginControl.Login(username, password) == true)
                 {
-
-                    // Navigate to the next form based on the role (replace StudentForm and InstructorForm)
                     if (role == "student")
                     {
+                        this.Hide();
                         studentViewHome studentViewHome = new studentViewHome();
                         studentViewHome.Show();
                     }
                     else if (role == "instructor")
                     {
+                        this.Hide();
                         instructorViewHome instructorViewHome = new instructorViewHome();
                         instructorViewHome.Show();
                     }
-
-                    // Hide the current form
-                    this.Hide();
+                    else
+                    {
+                        MessageBox.Show("Username or password is incorrect. Please try again.", "Login Failed",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password. Please try again.");
+
+
+
+
+
             }
         }
     }

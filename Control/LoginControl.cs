@@ -11,19 +11,28 @@ namespace Course_Management_System_Final.Control
 {
     public class LoginControl
     {
+
         DBConnector db = new DBConnector();
-        
+
         public bool Login(string username, string password)
         {
             if (username != null && password != null)
             {
                 int usnHash = username.GetHashCode();
                 int pwdHash = password.GetHashCode();
-                Validateinput(usnHash, pwdHash);
-                return true;
+                if (Validateinput(usnHash, pwdHash) == true)
+                {
+                    return true;
+                }
+
+                return false;
             }
-            else { return false; }
-            
+            else
+            {
+                return false;
+            }
+
+
         }
 
         public bool Validateinput(int username, int password)
@@ -33,10 +42,11 @@ namespace Course_Management_System_Final.Control
                 db.GetUser(username.ToString(), password.ToString());
                 return true;
             }
+
             return false;
         }
-        
-            
+
+
         public bool Authenticate(string username, Account account)
         {
             int LoggedInUsn = username.GetHashCode();
@@ -44,3 +54,5 @@ namespace Course_Management_System_Final.Control
         }
     }
 }
+        
+       
