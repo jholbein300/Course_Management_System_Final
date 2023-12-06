@@ -17,7 +17,7 @@ namespace Course_Management_System_Final
 
         private void addClassButton_Click(object sender, EventArgs e)
         {
-            addCourseView addCourseView = new addCourseView();
+            addClassView addCourseView = new addClassView();
             addCourseView.Show();
         }
         
