@@ -13,6 +13,7 @@ namespace Course_Management_System_Final
         public studentViewHome()
         {
             InitializeComponent();
+            PopulateClassesListBox(DBConnector.SessionManager.Instance.LoggedInUsername);
             addClassButton.Click += addClassButton_Click;
             logoutButton.Click += logoutButton_Click;
         }
@@ -47,7 +48,7 @@ namespace Course_Management_System_Final
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
+                using (SQLiteConnection connection = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;"))
                 {
                     connection.Open();
                     string usn = DBConnector.SessionManager.Instance.LoggedInUsername;
@@ -55,13 +56,13 @@ namespace Course_Management_System_Final
 
                     // SQL query to retrieve classes for a given username
                     string query =
-                        @"SELECT c.name FROM ACCOUNT a JOIN ENROLLMENT e ON a.accountID = e.studenttID JOIN COURSE c ON e.courseID = c.name WHERE a.username = usn ";
+                        @"SELECT c.name FROM ACCOUNT a JOIN ENROLLMENT e ON a.accountID = e.studentID JOIN COURSE c ON e.courseID = c.name WHERE a.username = @Username ";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@Username", usn);
 
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        using (SQLiteDataReader reader = command.ExecuteReader())
                         {
                             // Iterate through the results and add them to the ListBox
                             while (reader.Read())
