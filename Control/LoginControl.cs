@@ -30,6 +30,7 @@ namespace Course_Management_System_Final.control
                 db.GetUser(username, password);
                 return true;
             }
+            return false;
         }
         
             
