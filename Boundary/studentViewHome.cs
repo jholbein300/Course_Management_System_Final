@@ -12,8 +12,9 @@ namespace Course_Management_System_Final
     {
         public studentViewHome()
         {
+            string username = DBConnector.SessionManager.Instance.LoggedInUsername;
             InitializeComponent();
-            PopulateClassesListBox(DBConnector.SessionManager.Instance.LoggedInUsername);
+            PopulateClassesListBox(username);
             addClassButton.Click += addClassButton_Click;
             logoutButton.Click += logoutButton_Click;
         }

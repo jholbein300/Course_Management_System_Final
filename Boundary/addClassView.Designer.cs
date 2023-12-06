@@ -73,6 +73,8 @@ namespace Course_Management_System_Final
             this.classList.Size = new System.Drawing.Size(230, 43);
             this.classList.TabIndex = 1;
             this.classList.Text = "Choose Class";
+            this.classList.Items.Add("MATH 1300");
+            
             // 
             // addClassButton
             // 

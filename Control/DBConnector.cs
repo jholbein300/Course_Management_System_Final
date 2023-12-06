@@ -67,7 +67,7 @@ namespace Course_Management_System_Final.Control
                     INSERT INTO COURSE (name, instructor) VALUES ('CSCI 3020', 'Professor Robert');
                     INSERT INTO COURSE (name, instructor) VALUES ('MATH 1300', 'Professor Bob');
                     INSERT INTO ENROLLMENT (courseID, studentID) VALUES (1, 15);
-                    INSERT INTO ENROLLMENT (courseID, studentID) VALUES (3, 2);
+                    INSERT INTO ENROLLMENT (courseID, studentID) VALUES (1, 1);
                     COMMIT;";
                     cmnd.CommandText = strSql;
                     string usrname1 = "student";
@@ -195,7 +195,7 @@ namespace Course_Management_System_Final.Control
                             ,[courseID]
                             ,[studentID]
                             FROM[ENROLLMENT]
-                            WHERE [ID] IN (SELECT [accountID] FROM [ACCOUNT] WHERE [EROLLMENT].[ID] == [accountID])
+                            WHERE [ID] IN (SELECT [accountID] FROM [ACCOUNT] WHERE [ENROLLMENT].[ID] == [accountID])
                             AND (SELECT ID FROM COURSE where ENROLLMENT.ID == COURSE.ID)";
                 using (SQLiteCommand com = new SQLiteCommand(stm, conn))
                 {

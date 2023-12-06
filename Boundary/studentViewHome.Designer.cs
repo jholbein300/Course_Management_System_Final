@@ -72,6 +72,7 @@ namespace Course_Management_System_Final
             this.scheduleOfClasses.Name = "scheduleOfClasses";
             this.scheduleOfClasses.Size = new System.Drawing.Size(420, 166);
             this.scheduleOfClasses.TabIndex = 2;
+            
             // 
             // scheduleLabel
             // 
