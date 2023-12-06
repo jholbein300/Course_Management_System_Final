@@ -144,7 +144,7 @@ namespace Course_Management_System_Final.Control
                     {
                         while (rdr.Read())
                         {
-                            Account acct = new Account(rdr.GetInt32(0), rdr.GetString(1), rdr.GetString(2), rdr.GetString(3), rdr.GetString(4));
+                            Account acct = new Account(rdr.GetInt32(0), usn, rdr.GetString(2), rdr.GetString(3), rdr.GetString(4));
                             acctList.Add(acct);
                         }
                     }

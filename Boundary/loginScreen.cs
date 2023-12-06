@@ -1,15 +1,20 @@
 ﻿// loginScreen.cs
 
 using System;
+using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Windows.Forms;
 using Course_Management_System_Final.Control;
+using Course_Management_System_Final.Entity;
 
 namespace Course_Management_System_Final
 {
     public partial class loginScreen : Form
     {
         private AuthenticationHelper authenticationHelper;
+
+        public List<Course> ClassList { get; set; }
 
         public loginScreen()
         {
@@ -44,7 +49,7 @@ namespace Course_Management_System_Final
                     if (role == "student")
                     {
                         this.Hide();
-                        studentViewHome studentViewHome = new studentViewHome();
+                        studentViewHome studentViewHome = new studentViewHome(ClassList);
                         studentViewHome.Show();
                     }
                     else if (role == "instructor")
@@ -52,6 +57,7 @@ namespace Course_Management_System_Final
                         this.Hide();
                         instructorViewHome instructorViewHome = new instructorViewHome();
                         instructorViewHome.Show();
+                        Connect(username);
                     }
                     else
                     {
@@ -59,12 +65,15 @@ namespace Course_Management_System_Final
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
-
-
-
-
             }
+        }
+
+        public List<Course> Connect(string usn)
+        {
+            DBConnector dB = new DBConnector();
+            List<Course> classList = dB.getClass(usn);
+            ClassList = classList;
+            return classList;
         }
     }
 }
