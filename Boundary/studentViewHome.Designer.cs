@@ -58,10 +58,12 @@ namespace Course_Management_System_Final
             // 
             // scheduleOfClasses
             // 
+            this.scheduleOfClasses.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scheduleOfClasses.FormattingEnabled = true;
+            this.scheduleOfClasses.ItemHeight = 19;
             this.scheduleOfClasses.Location = new System.Drawing.Point(275, 178);
             this.scheduleOfClasses.Name = "scheduleOfClasses";
-            this.scheduleOfClasses.Size = new System.Drawing.Size(240, 134);
+            this.scheduleOfClasses.Size = new System.Drawing.Size(240, 118);
             this.scheduleOfClasses.TabIndex = 2;
             // 
             // scheduleLabel

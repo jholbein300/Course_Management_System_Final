@@ -202,8 +202,8 @@ namespace Course_Management_System_Final.Control
                     {
                         while (rdr.Read())
                         {
-                            Enrollment enrol = new Enrollment(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetInt32(2));
-                            enList.Add(enrol);
+                            Enrollment enroll = new Enrollment(rdr.GetInt32(0), rdr.GetInt32(1), rdr.GetInt32(2));
+                            enList.Add(enroll);
                         }
                     }
                 }
