@@ -107,9 +107,6 @@
     <Compile Include="Boundary\studentViewHome.Designer.cs">
       <DependentUpon>studentViewHome.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Boundary\addClassView.resx">
-      <DependentUpon>addClassView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Boundary\instructorViewHome.resx">
       <DependentUpon>instructorViewHome.cs</DependentUpon>
     </EmbeddedResource>

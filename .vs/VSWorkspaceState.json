@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Boundary",
+    "\\Control"
   ],
-  "SelectedNode": "\\Course_Management_System_Final.sln",
+  "SelectedNode": "\\Control\\DBConnector.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -31,8 +31,6 @@ namespace Course_Management_System_Final.Control
             {
                 return false;
             }
-
-
         }
 
         public bool Validateinput(int username, int password)
