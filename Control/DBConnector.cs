@@ -283,7 +283,7 @@ namespace Course_Management_System_Final.Control
             }
         }
 
-        public static void SaveLogin(string usn)
+        public void SaveLogin(string usn)
         
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))

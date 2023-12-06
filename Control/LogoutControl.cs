@@ -7,6 +7,11 @@ namespace Course_Management_System_Final.Control
 {
     public class LogoutControl
     {
+        DBConnector db = new DBConnector();
+        public void logout(string username)
+        {
+            db.SaveLogOut(username);
 
+        }
     }
 }
