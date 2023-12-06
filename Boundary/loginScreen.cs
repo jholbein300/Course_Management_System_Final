@@ -1,6 +1,7 @@
 ﻿// loginScreen.cs
 
 using System;
+using System.Data.SQLite;
 using System.Windows.Forms;
 
 namespace Course_Management_System_Final
@@ -41,6 +42,7 @@ namespace Course_Management_System_Final
                     {
                         studentViewHome studentViewHome = new studentViewHome();
                         studentViewHome.Show();
+                        Wow();
                     }
                     else if (role == "instructor")
                     {
@@ -58,5 +60,13 @@ namespace Course_Management_System_Final
                 MessageBox.Show("Invalid username or password. Please try again.");
             }
         }
+
+       // private void Wow()
+        //{
+        //    using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
+         //   {
+                string comdstr = ""
+           // }
+       // }
     }
 }
