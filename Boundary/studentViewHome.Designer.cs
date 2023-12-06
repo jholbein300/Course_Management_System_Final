@@ -40,35 +40,44 @@ namespace Course_Management_System_Final
             // 
             // studentName
             // 
+            this.studentName.AutoSize = true;
+            this.studentName.Font = new System.Drawing.Font("Trebuchet MS", 14F);
             this.studentName.Location = new System.Drawing.Point(12, 9);
             this.studentName.Name = "studentName";
-            this.studentName.Size = new System.Drawing.Size(100, 23);
+            this.studentName.Size = new System.Drawing.Size(123, 24);
             this.studentName.TabIndex = 0;
             this.studentName.Text = "studentName";
             // 
             // logoutButton
             // 
-            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.logoutButton.Location = new System.Drawing.Point(713, 12);
+            this.logoutButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.logoutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.logoutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.logoutButton.Font = new System.Drawing.Font("Trebuchet MS", 14F);
+            this.logoutButton.Location = new System.Drawing.Point(882, 12);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(75, 23);
+            this.logoutButton.Size = new System.Drawing.Size(90, 40);
             this.logoutButton.TabIndex = 1;
             this.logoutButton.Text = "Logout";
-            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.UseVisualStyleBackColor = false;
             // 
             // scheduleOfClasses
             // 
+            this.scheduleOfClasses.Font = new System.Drawing.Font("Trebuchet MS", 16F);
             this.scheduleOfClasses.FormattingEnabled = true;
-            this.scheduleOfClasses.Location = new System.Drawing.Point(275, 178);
+            this.scheduleOfClasses.ItemHeight = 27;
+            this.scheduleOfClasses.Location = new System.Drawing.Point(290, 240);
             this.scheduleOfClasses.Name = "scheduleOfClasses";
-            this.scheduleOfClasses.Size = new System.Drawing.Size(240, 134);
+            this.scheduleOfClasses.Size = new System.Drawing.Size(420, 166);
             this.scheduleOfClasses.TabIndex = 2;
             // 
             // scheduleLabel
             // 
-            this.scheduleLabel.Location = new System.Drawing.Point(290, 126);
+            this.scheduleLabel.Font = new System.Drawing.Font("Trebuchet MS", 24F);
+            this.scheduleLabel.Location = new System.Drawing.Point(290, 140);
             this.scheduleLabel.Name = "scheduleLabel";
-            this.scheduleLabel.Size = new System.Drawing.Size(189, 23);
+            this.scheduleLabel.Size = new System.Drawing.Size(420, 50);
             this.scheduleLabel.TabIndex = 3;
             this.scheduleLabel.Text = "Current Schedule of Classes";
             this.scheduleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -76,27 +85,32 @@ namespace Course_Management_System_Final
             // addClassButton
             // 
             this.addClassButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.addClassButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.addClassButton.Location = new System.Drawing.Point(353, 342);
+            this.addClassButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addClassButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.addClassButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.addClassButton.Font = new System.Drawing.Font("Trebuchet MS", 16F);
+            this.addClassButton.Location = new System.Drawing.Point(425, 470);
             this.addClassButton.Name = "addClassButton";
-            this.addClassButton.Size = new System.Drawing.Size(75, 23);
+            this.addClassButton.Size = new System.Drawing.Size(150, 45);
             this.addClassButton.TabIndex = 4;
             this.addClassButton.Text = "Add Class";
-            this.addClassButton.UseVisualStyleBackColor = true;
+            this.addClassButton.UseVisualStyleBackColor = false;
             // 
             // studentViewHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(984, 711);
             this.Controls.Add(this.addClassButton);
             this.Controls.Add(this.scheduleLabel);
             this.Controls.Add(this.scheduleOfClasses);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.studentName);
+            this.MinimumSize = new System.Drawing.Size(1000, 750);
             this.Name = "studentViewHome";
             this.Text = "Home Page";
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         private System.Windows.Forms.Button addClassButton;
