@@ -94,6 +94,7 @@ namespace Course_Management_System_Final
             this.professorName.Name = "professorName";
             this.professorName.Size = new System.Drawing.Size(0, 27);
             this.professorName.TabIndex = 3;
+            this.professorName.Text = DBConnector.SessionManager.Instance.LoggedInUsername;
             // 
             // logoutButton
             // 
