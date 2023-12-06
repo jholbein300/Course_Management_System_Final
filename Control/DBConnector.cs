@@ -9,7 +9,7 @@ namespace Course_Management_System_Final.Control
 {
     public  class DBConnector
     {
-        public void InitializeDB()
+        public static void InitializeDB()
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
             {

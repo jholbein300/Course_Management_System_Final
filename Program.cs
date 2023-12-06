@@ -9,6 +9,7 @@ namespace Course_Management_System_Final
 {
     static class Program
     {
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
