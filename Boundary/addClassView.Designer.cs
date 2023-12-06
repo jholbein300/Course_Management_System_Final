@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using Course_Management_System_Final.Control;
 
 namespace Course_Management_System_Final
 {
@@ -92,7 +93,7 @@ namespace Course_Management_System_Final
             this.studentName.Name = "studentName";
             this.studentName.Size = new System.Drawing.Size(143, 27);
             this.studentName.TabIndex = 7;
-            this.studentName.Text = "studentName";
+            this.studentName.Text = DBConnector.SessionManager.Instance.LoggedInUsername;
             // 
             // addClassView
             // 

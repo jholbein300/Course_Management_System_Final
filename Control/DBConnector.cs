@@ -118,6 +118,7 @@ namespace Course_Management_System_Final.Control
                         return act;
                     }
                 }
+                
             }
         }
 
@@ -319,6 +320,60 @@ namespace Course_Management_System_Final.Control
                     cmnd.ExecuteNonQuery();
                 }
             }
+        }
+        
+        public string GetName(string usn, string pwd)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
+            {
+                conn.Open();
+                int x = usn.GetHashCode();
+                int y = pwd.GetHashCode();
+                string stm = @"SELECT [name] FROM [ACCOUNT] WHERE [username] == ($name) AND [password] == ($pd);";
+                using (SQLiteCommand cmnd = new SQLiteCommand(stm, conn))
+                {
+                    cmnd.Parameters.AddWithValue("$name", x);
+                    cmnd.Parameters.AddWithValue("$pd", y);
+                    using (SQLiteDataReader rdr = cmnd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            return rdr.GetString(0);
+                        }
+                    }
+                    return null; // Return null if no matching user is found
+                }
+            }
+        }
+        
+        public class SessionManager
+        {
+            private static SessionManager _instance;
+            public static SessionManager Instance
+            {
+                get
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new SessionManager();
+                    }
+                    return _instance;
+                }
+            }
+
+            private string _loggedInUsername;
+
+            public string LoggedInUsername
+            {
+                get { return _loggedInUsername; }
+            }
+
+            public void SetLoggedInUser(string username)
+            {
+                _loggedInUsername = username;
+            }
+
+            // Add other session-related properties or methods as needed
         }
     }
 }

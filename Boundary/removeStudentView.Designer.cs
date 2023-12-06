@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using Course_Management_System_Final.Control;
 
 namespace Course_Management_System_Final
 {
@@ -50,7 +51,7 @@ namespace Course_Management_System_Final
             this.professorName.Name = "professorName";
             this.professorName.Size = new System.Drawing.Size(160, 27);
             this.professorName.TabIndex = 4;
-            this.professorName.Text = "professorName";
+            this.professorName.Text = DBConnector.SessionManager.Instance.LoggedInUsername;
             // 
             // decorativeBox
             // 

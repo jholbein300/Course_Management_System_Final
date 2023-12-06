@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using Course_Management_System_Final.Control;
 
 namespace Course_Management_System_Final
 {
@@ -46,7 +47,7 @@ namespace Course_Management_System_Final
             this.studentName.Name = "studentName";
             this.studentName.Size = new System.Drawing.Size(123, 24);
             this.studentName.TabIndex = 0;
-            this.studentName.Text = "studentName";
+            this.studentName.Text = DBConnector.SessionManager.Instance.LoggedInUsername;
             // 
             // logoutButton
             // 
