@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using Course_Management_System_Final.Entity;
 
-namespace Course_Management_System_Final.control
+namespace Course_Management_System_Final.Control
 {
     public class LoginControl
     {

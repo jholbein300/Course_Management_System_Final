@@ -5,7 +5,7 @@ using System.IO;
 using System.Security.Principal;
 using Course_Management_System_Final.Entity;
 
-namespace Course_Management_System_Final.control
+namespace Course_Management_System_Final.Control
 {
     public  class DBConnector
     {
