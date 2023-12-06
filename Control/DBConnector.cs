@@ -64,8 +64,8 @@ namespace Course_Management_System_Final.Control
                     strSql = @"BEGIN TRANSACTION; 
                     INSERT INTO ACCOUNT (username, password, role, name) VALUES ($hashusr1, $hashpwd1, 'student', 'Ben Sheldon');
                     INSERT INTO ACCOUNT (username, password, role, name) VALUES ($hashusr2, $hashpwd2, 'instructor', 'Professor Robert');
-                    INSERT INTO COURSE (name, instructor) VALUES ('CSCI 3020', 'Robert');
-                    INSERT INTO COURSE (name, instructor) VALUES ('MATH 1300', 'Bob');
+                    INSERT INTO COURSE (name, instructor) VALUES ('CSCI 3020', 'Professor Robert');
+                    INSERT INTO COURSE (name, instructor) VALUES ('MATH 1300', 'Professor Bob');
                     INSERT INTO ENROLLMENT (courseID, studentID) VALUES (1, 15);
                     INSERT INTO ENROLLMENT (courseID, studentID) VALUES (3, 2);
                     COMMIT;";
