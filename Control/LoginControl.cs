@@ -16,18 +16,20 @@ namespace Course_Management_System_Final.Control
         {
             if (username != null && password != null)
             {
-                validateinput(username, password);
+                int usnHash = username.GetHashCode();
+                int pwdHash = password.GetHashCode();
+                validateinput(usnHash, pwdHash);
                 return true;
             }
             else { return false; }
             
         }
 
-        public bool validateinput(string username, string password)
+        public bool validateinput(int username, int password)
         {
-            if (username != null && password.Length >= 8)
+            if (username != null && password != null)
             {
-                db.GetUser(username, password);
+                db.GetUser(username.ToString(), password.ToString());
                 return true;
             }
             return false;
@@ -36,7 +38,7 @@ namespace Course_Management_System_Final.Control
             
         public bool Authenticate(string username, Account account)
         {
-            int LoggedInUsn = 0;
+            int LoggedInUsn = username.GetHashCode();
             return true;
         }
     }

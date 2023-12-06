@@ -246,7 +246,7 @@ namespace Course_Management_System_Final.Control
             }
         }
 
-        public void SaveLogOut(string usn)
+        public void SaveLogOut(string username)
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
             {
@@ -257,7 +257,7 @@ namespace Course_Management_System_Final.Control
                 string t = time.ToString("s");
                 string d = date.ToString("s");
                 int id = 0;
-                int hash = usn.GetHashCode();
+                int hash = username.GetHashCode();
                 string stm = "SELECT [accountID] FROM ACCOUNT WHERE username = ($name);";
                 using (SQLiteCommand cmnd = new SQLiteCommand(stm, conn))
                 {
@@ -283,7 +283,7 @@ namespace Course_Management_System_Final.Control
             }
         }
 
-        public void SaveLogin(string usn)
+        public static void SaveLogin(string usn)
         
         {
             using (SQLiteConnection conn = new SQLiteConnection(@"data source =..\..\Data\cManDb.db;Version=3"))
