@@ -52,6 +52,10 @@ namespace Course_Management_System_Final.Control
             int LoggedInUsn = username.GetHashCode();
             return true;
         }
+        public void saveLogin(string username)
+        {
+            db.SaveLogin(username);
+        }
     }
 }
         
