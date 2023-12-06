@@ -1,13 +1,26 @@
-﻿using System;
+﻿using Course_Management_System_Final.Entity;
+using System;
 using System.Collections.Generic;
 
 namespace Course_Management_System_Final.Control
 {
-    public static class ClassControl
+    public class ClassControl
     {
-        public static void addClass(string usn)
+        DBConnector db = new DBConnector();
+        public  void addClass(string usn)
         {
-            DBConnector.GetUser(usn, usn);
+            db.getClass(usn);
         }
+        public void submit(Enrollment enrollment)
+        {
+            db.Save(enrollment);
+        }
+        public void getList(string usn)
+        {
+            db.getList(usn);
+        }
+        public void open(string usn, List<Enrollment> enrollments) 
+        { }
+
     }
 }
