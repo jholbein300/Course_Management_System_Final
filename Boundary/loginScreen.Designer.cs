@@ -75,7 +75,6 @@ namespace Course_Management_System_Final
             // loginLabel
             // 
             this.loginLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginLabel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.loginLabel.Font = new System.Drawing.Font("Trebuchet MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginLabel.Location = new System.Drawing.Point(205, 45);
             this.loginLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
@@ -88,6 +87,7 @@ namespace Course_Management_System_Final
             // loginBtn
             // 
             this.loginBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.loginBtn.Font = new System.Drawing.Font("Trebuchet MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.Location = new System.Drawing.Point(205, 288);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(2);

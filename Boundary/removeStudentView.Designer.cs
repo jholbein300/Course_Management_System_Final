@@ -45,10 +45,10 @@ namespace Course_Management_System_Final
             // professorName
             // 
             this.professorName.AutoSize = true;
-            this.professorName.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.professorName.Font = new System.Drawing.Font("Trebuchet MS", 16F);
             this.professorName.Location = new System.Drawing.Point(12, 9);
             this.professorName.Name = "professorName";
-            this.professorName.Size = new System.Drawing.Size(103, 19);
+            this.professorName.Size = new System.Drawing.Size(160, 27);
             this.professorName.TabIndex = 4;
             this.professorName.Text = "professorName";
             // 
@@ -56,21 +56,22 @@ namespace Course_Management_System_Final
             // 
             this.decorativeBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.decorativeBox.AutoSize = true;
+            this.decorativeBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.decorativeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.decorativeBox.Controls.Add(this.selectClassLabel);
             this.decorativeBox.Controls.Add(this.studentList);
             this.decorativeBox.Controls.Add(this.removeStudentButton);
-            this.decorativeBox.Location = new System.Drawing.Point(350, 265);
+            this.decorativeBox.Location = new System.Drawing.Point(275, 200);
             this.decorativeBox.Name = "decorativeBox";
-            this.decorativeBox.Size = new System.Drawing.Size(300, 220);
+            this.decorativeBox.Size = new System.Drawing.Size(450, 350);
             this.decorativeBox.TabIndex = 5;
             // 
             // selectClassLabel
             // 
-            this.selectClassLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectClassLabel.Location = new System.Drawing.Point(90, 36);
+            this.selectClassLabel.Font = new System.Drawing.Font("Trebuchet MS", 24F);
+            this.selectClassLabel.Location = new System.Drawing.Point(110, 50);
             this.selectClassLabel.Name = "selectClassLabel";
-            this.selectClassLabel.Size = new System.Drawing.Size(121, 22);
+            this.selectClassLabel.Size = new System.Drawing.Size(230, 50);
             this.selectClassLabel.TabIndex = 2;
             this.selectClassLabel.Text = "Select Student";
             this.selectClassLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,21 +80,23 @@ namespace Course_Management_System_Final
             // studentList
             // 
             this.studentList.AllowDrop = true;
-            this.studentList.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentList.Font = new System.Drawing.Font("Trebuchet MS", 16F);
             this.studentList.FormattingEnabled = true;
-            this.studentList.Location = new System.Drawing.Point(90, 91);
+            this.studentList.Location = new System.Drawing.Point(110, 159);
             this.studentList.Name = "studentList";
-            this.studentList.Size = new System.Drawing.Size(121, 27);
+            this.studentList.Size = new System.Drawing.Size(230, 35);
             this.studentList.TabIndex = 1;
             this.studentList.Text = "Choose Student";
             // 
             // removeStudentButton
             // 
+            this.removeStudentButton.AutoSize = true;
+            this.removeStudentButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.removeStudentButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.removeStudentButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeStudentButton.Location = new System.Drawing.Point(90, 147);
+            this.removeStudentButton.Font = new System.Drawing.Font("Trebuchet MS", 16F);
+            this.removeStudentButton.Location = new System.Drawing.Point(125, 250);
             this.removeStudentButton.Name = "removeStudentButton";
-            this.removeStudentButton.Size = new System.Drawing.Size(121, 23);
+            this.removeStudentButton.Size = new System.Drawing.Size(200, 40);
             this.removeStudentButton.TabIndex = 0;
             this.removeStudentButton.Text = "Remove Student";
             this.removeStudentButton.UseVisualStyleBackColor = true;
@@ -109,6 +112,7 @@ namespace Course_Management_System_Final
             this.Name = "removeStudentView";
             this.Text = "Remove Student";
             this.decorativeBox.ResumeLayout(false);
+            this.decorativeBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
