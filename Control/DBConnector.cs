@@ -70,10 +70,10 @@ namespace Course_Management_System_Final.Control
                     INSERT INTO ENROLLMENT (courseID, studentID) VALUES (3, 2);
                     COMMIT;";
                     cmnd.CommandText = strSql;
-                    string usrname1 = "student@augusta.edu";
-                    string pwd1 = "student123!";
-                    string usrname2 = "instructor@augusta.edu";
-                    string pwd2 = "instructor123!";
+                    string usrname1 = "student";
+                    string pwd1 = "student";
+                    string usrname2 = "instructor";
+                    string pwd2 = "instructor";
                     int x = usrname1.GetHashCode();
                     int y = pwd1.GetHashCode();
                     int x1 = usrname2.GetHashCode();
